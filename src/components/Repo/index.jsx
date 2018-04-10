@@ -15,7 +15,7 @@ const Repo = ({ pos, name, html_url, description, created_at, language, stargaze
 	return (
 		<div className = 'repo'>
 			<div>
-				<a href = { html_url } data-position = { pos }>{ name }</a>	
+				<a href = { html_url } data-position = { pos } >{ name }</a>	
 				<div className = 'repoStats'>								
 					<span className = 'stars'>{ stargazers_count }</span>
 					<span className = 'forks'>{ forks_count }</span>

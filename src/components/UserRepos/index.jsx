@@ -3,20 +3,22 @@ import React, { Component } from 'react';
 
 //Instruments
 import Styles from '../../styles.less';
-import { array } from 'prop-types';
+import { array, bool } from 'prop-types';
 
 //Components
 import Repo from '../Repo';
+import Spinner from '../Spinner/';
 
 export default class UserRepos extends Component {
 
 	static propTypes = {
-		repos: array.isRequired,
+		isFetching: bool.isRequired,
+		repos: 		array.isRequired
 	}
 
 	render () {
 		
-		const { repos } = this.props;
+		const { repos, isFetching } = this.props;
 		const reposList = repos.map((
 			{
 				created_at,
@@ -48,7 +50,8 @@ export default class UserRepos extends Component {
 		return (
 		!repos.length ?
 			null :
-			(<section className = 'repositories'>
+			(<section className = 'repositories'>				
+				<Spinner isFetching = { isFetching } />
 				<h2>Repositories</h2>
 				{reposList}				
 			</section>)
