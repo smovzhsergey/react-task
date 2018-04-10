@@ -1,6 +1,5 @@
 //Core
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 //Instruments
 import Styles from '../../styles.less';
@@ -30,20 +29,19 @@ export default class UserProfile extends Component {
 		const created = format(created_at, 'DD.MM.YYYY'); 
     	const updated = format(updated_at, 'DD.MM.YYYY');
     	const realLocation = location === null ? 'unknown' : location
+    	const imageAlt = `${ name } avatar`;
 
-		return (
-
-			
+		return (			
 			<section className = 'userProfile'>
 				<div className = 'userData'>
 					<div>
-						<img src = { avatar_url } />
+						<img src = { avatar_url } alt = { imageAlt } />
 					</div>
 					<div className = 'userInfo'>
 						<p>
 							<span>{ name }</span>
-							<a href = { html_url }>Github</a>
-							<a href = { blog }>Blog</a>							
+							<a href = { html_url } target = '_blank' >Github</a>
+							<a href = { blog } target = '_blank' >Blog</a>							
 						</p>
 						<p className = 'location'>{ realLocation }</p>
 						<table>

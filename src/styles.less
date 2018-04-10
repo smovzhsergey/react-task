@@ -75,6 +75,11 @@ header {
 			border: 1px solid red;
 		}
 	}
+
+	@media (max-width: 640px) {
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 /* Profile section */
@@ -240,6 +245,14 @@ header {
 			color: #fff;
 			margin-right: 20px;
 			padding: 0 6px;
+		}
+	}
+
+	p:last-child {
+		font-size: 0.8em;
+
+		strong {
+			margin-right: 10px;
 		}
 	}
 }
